@@ -1,9 +1,9 @@
-function onGiveLootHunter(thePlayer)
+﻿function onGiveLootHunter(thePlayer)
 	account = getPlayerAccount(source)
-	if getElementData(player,"VIP") then --ACL group
+	if getElementData(player,"Ship") then --ACL group
 		if type(getAccountData(account,"usevipHUNTER")) ~= "number" then setAccountData(account,"usevipHUNTER",0) end
 		if not getAccountData(account,"usevipHUNTER") or getAccountData(account,"usevipHUNTER") <= 0 then
-			setAccountData(account,"usevipHUNTER",12) --kd
+			setAccountData(account,"usevipHUNTER",100) --kd
 				setElementData(thePlayer,"winchester_1866",1) 
 				setElementData(thePlayer,"winchester_1866_mag", 200) 
 				setElementData(thePlayer,"m4a1_rco", 1) 
@@ -28,9 +28,9 @@ function onGiveLootHunter(thePlayer)
 				setElementData(thePlayer, "armorLNogOn", 1) 
 				setElementData(thePlayer, "armorRNogOn", 1) 
 				setElementData(thePlayer, "pole_bag", 1) 
-				setElementData(thePlayer, "MAX_Slots", 150) 
-				setElementData(thePlayer, "medkit", 7) 
-				setElementData(thePlayer, "bint", 5) 
+				setElementData(thePlayer, "MAX_Slots", 50) 
+				setElementData(thePlayer, "Nemedkit", 7) 
+				setElementData(thePlayer, "Nebint", 5) 
 				setElementData(thePlayer, "painkiller", 10) 
 				setElementData(thePlayer, "morphine", 10) 
 				setElementData(thePlayer, "woman_skin", 1) 
@@ -40,11 +40,11 @@ function onGiveLootHunter(thePlayer)
 				setElementData(thePlayer,"tools",1) 
 				setElementData(thePlayer,"pnv",1) 
 				setElementData(thePlayer,"radio",1) 
-				setElementData(thePlayer,"bankmoney",getElementData(thePlayer,"bankmoney")+10000) 
+				setElementData(thePlayer,"bankmoney",getElementData(thePlayer,"bankmoney")+Ne10000) 
 				end
 		else
 			outputChatBox("Вы уже получили набор охотника. Попробуйте ещё раз через "..getAccountData(account,"usevipHUNTER").." мин.",source,255,255,255)
 		end
 	-- end
 end
-addCommandHandler ( "hunter", onGiveLootTitan)
+addCommandHandler ( "NeHunter", onGiveLootTitan)
